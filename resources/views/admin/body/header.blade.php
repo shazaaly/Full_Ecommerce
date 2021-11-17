@@ -111,7 +111,7 @@
 
             @php
                 use Illuminate\Support\Facades\DB;
-                $adminData = DB::table('admins')->first();
+                $adminData = DB::table('admins')->where('id', \Illuminate\Support\Facades\Auth::id())->first();
             @endphp
 
             <!-- User Account-->
@@ -119,7 +119,7 @@
                     <a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0" data-toggle="dropdown"
                        title="User">
                         <img
-                            src=" {{ (!empty($adminData->profile_photo_path)) ? url('upload/admin_images/'.$adminData->profile_photo_path) : url('upload/1.jpg')}}"
+                            src=" {{ (!empty($adminData->profile_photo_path)) ? url($adminData->profile_photo_path) : url('upload/1.jpg')}}"
                             alt="Admin Profile">
                     </a>
                     <ul class="dropdown-menu animated flipInX">

@@ -19,8 +19,9 @@
                         <div class="box-body">
                             <div class="row">
                                 <div class="col">
-                                    <form action=" {{route('admin.profile.store')}} " method="post" enctype="multipart/form-data">
+                                    <form action=" {{route('admin.profile.update', $editData->id)}} " method="post" enctype="multipart/form-data">
                                         @csrf
+                                        <input type="hidden" name="old_image" value="{{ $editData->profile_photo_path }}">
 
                                         <div class="row">
                                             <div class="col-12">
@@ -90,7 +91,7 @@
 
 
                                         <div class="text-xs-right">
-                                            <button type="submit" class="btn btn-rounded btn-info">Submit</button>
+                                            <input type="submit" class="btn btn-rounded btn-info">Submit</input>
                                         </div>
                                     </form>
 
