@@ -37,7 +37,6 @@ class CreateAdminsTable extends Migration
             $table->string('orders')->nullable()->default(1);
             $table->string('stock')->nullable()->default(1);
             $table->string('reports')->nullable()->default(1);
-            $table->string('reports')->nullable()->default(1);
             $table->string('allUsers')->nullable()->default(1);
             $table->string('adminUserRole')->nullable()->default(1);
             $table->integer('type')->nullable()->default(1);
